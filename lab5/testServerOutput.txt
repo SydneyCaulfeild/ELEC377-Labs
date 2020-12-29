@@ -1,0 +1,4 @@
+Script started on Wed 02 Dec 2020 03:14:02 PM EST
+student@ELEC377-Student:~/ELEC377-Group-26/lab5$ ./server 10000
+student@ELEC377-Student:~/ELEC377-Group-26/lab5$ A exit
+Script done on Wed 02 Dec 2020 03:15:25 PM EST

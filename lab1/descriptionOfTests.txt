@@ -1,0 +1,38 @@
+For the testing of our program we have created five test files aimed at each addressing a specific functionality of the program. Each file is listed below with a description of the functionality it is testing and the associated scenarios tested to prove it works.
+
+Multiple edge cases were tested, and more details of the inputs are found below. The output of each test contains the number of words that the program read, what the words are, the command function output (if applicable), and error statements (if applicable).
+
+1. testSplitCommand.txt
+The goal of this file was to make sure that the program is able to split the terminal input into words and remove any unnecessary white space. The following cases were tested:
+    -all spaces (no words)
+    -multiple leading spaces before a word
+    -multiple spaces between words
+    -a single word
+    -symbols
+    -multiple words with conventional spacing
+In all scenarios, the program returned the correct number of words and the correct words. 
+
+2. testExitCommand.txt
+The exit function is not meant to have any arguments. We tested to make sure that the exit command only works when it is the first word of the input but not when it appears later in the sentence. The following cases were tested:
+    -a sentence with the word exit but not as the first word
+    -exit followed by another word
+    -just the word exit
+
+3. testPwdCommand.txt
+This command prints the working directory and is also not meant to take any arguments. The following cases were tested:
+    -the pwd command on its own
+    -pwd followed by another word
+
+4. testCdCommand.txt
+The change directory command is meant to work both with and without an argument. The following cases were tested:
+    -cd without any arguments (change to home directory)
+    -cd with a valid argument
+    -cd followed by two words
+    -cd with an invalid argument
+
+5. testLsCommand.txt
+The ls command can have no arguments or the “-a” argument to include hidden files. The following cases were tested:
+    -ls with no arguments
+    -ls with the “-a” argument
+    -ls with an invalid argument
+    -ls followed by multiple words

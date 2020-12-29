@@ -1,0 +1,17 @@
+Script started on Sun 27 Sep 2020 02:54:30 PM EDT
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ ./shell
+%> pwd
+1
+0: pwd
+Your current working directory is: /home/student/ELEC377-Group-26/lab1 
+%> pwd argument
+2
+0: pwd
+1: argument
+Your current working directory is: /home/student/ELEC377-Group-26/lab1 
+%> exit
+1
+0: exit
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ exit
+
+Script done on Sun 27 Sep 2020 02:55:05 PM EDT

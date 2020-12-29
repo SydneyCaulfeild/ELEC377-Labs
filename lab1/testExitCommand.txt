@@ -1,0 +1,19 @@
+Script started on Sun 27 Sep 2020 02:53:48 PM EDT
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ ./shell
+%> please exit
+2
+0: please
+1: exit
+Command not found.
+%> exit now
+2
+0: exit
+1: now
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ ./shell
+%> exit
+1
+0: exit
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ exit
+exit
+
+Script done on Sun 27 Sep 2020 02:54:19 PM EDT

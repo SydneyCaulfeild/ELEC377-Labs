@@ -1,0 +1,31 @@
+Script started on Sun 27 Sep 2020 02:51:07 PM EDT
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ ./shell
+%>     
+0
+%>   hi
+1
+0: hi
+Command not found.
+%> hi ello   world
+2
+0: hello
+1: world
+Command not found.
+%> hello    
+1
+0: hello
+Command not found.
+%> !!
+1
+0: !!
+Command not found.
+%> hello world
+2
+0: hello
+1: world
+Command not found.
+%> exit
+1
+0: exit
+student@ELEC377-Student:~/ELEC377-Group-26/lab1$ exit
+Script done on Sun 27 Sep 2020 02:53:02 PM EDT

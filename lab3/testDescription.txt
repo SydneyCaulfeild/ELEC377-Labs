@@ -1,0 +1,8 @@
+Test Documentation
+	
+Sydney Caulfeild / 20102648
+Emma Paczkowski / 20095427
+
+We created three files for testing. The first two, test00.txt and test01.txt, are input files that were read by producers using file redirection. test00.txt contains the numbers 1 and 2, and test01.txt contains the numbers 3, 4, and 5. The third test file, test02.txt, is used to save the output of the consumer.
+
+test00.txt was loaded first into a producer, then test01.txt was loaded second into a producer. This means that the output should be 1, 2, 3, 4, 5, because the first test file (test00) will be written entirely to the buffer before the second test file (test01). This is what appears in test02.txt, which indicates that the producers wrote correctly to the buffer and the consumer read data correctly from the buffer.

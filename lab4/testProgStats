@@ -1,0 +1,24 @@
+Script started on Sun 15 Nov 2020 05:12:47 PM EST
+student@ELEC377-Student:~/ELEC377-Group-26/lab4$ ./progStats.sh labs
+Mail Files:
+labs/lab0/lab0user.c: 2, 1
+labs/lab1/shell.c: 18, 8
+labs/lab3/consumer.c: 2, 2
+labs/lab3/meminit.c: 3, 0
+labs/lab3/producer.c: 2, 2
+Module files:
+labs/lab0/lab0mod.c: 77,80,108
+labs/lab2/lab2.c: 47,96
+student@ELEC377-Student:~/ELEC377-Group-26/lab4$ ./progStats.sh testDir/
+Mail Files:
+No mail files...
+Module files:
+No module files...
+student@ELEC377-Student:~/ELEC377-Group-26/lab4$ ./progStats.sh invalid
+That is not a valid directory name.
+student@ELEC377-Student:~/ELEC377-Group-26/lab4$ ./progStats.sh too many arguments
+You must provide one argument. Example usage: ./progStats.sh directoryname.
+student@ELEC377-Student:~/ELEC377-Group-26/lab4$ ./progStats.sh 
+You must provide one argument. Example usage: ./progStats.sh directoryname.
+student@ELEC377-Student:~/ELEC377-Group-26/lab4$ exit
+Script done on Sun 15 Nov 2020 05:13:34 PM EST

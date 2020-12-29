@@ -1,0 +1,10 @@
+Test Documentation
+	
+Sydney Caulfeild / 20102648
+Emma Paczkowski / 20095427
+
+progStats.sh testing:
+The results of all tests for this file are in the file called "testProgStats" found in the lab4 folder. To test this file, we used a script file to record all input and output. We demonstrate that the program shows the appropriate error when no arguments are given, too many arguments are given, or an invalid argument is given. It also says "no main files..." or "no module files..." when given a directory without any main or module files. This is proven with testDir, which is an empty directory used for testing. Finally, the script works when given the labs folder (which contains the code for our previous labs) because it prints the correct count for printf, fprintf, and printk commands in the proper format.
+
+printDoc.sh testing:
+The results of all tests for this file are in the file called test1out.txt found in lab4/labs/lab0. To test this file, we ran the executable in the lab4 directory and saved the output to test1out.txt. As you can see, test1out.txt contains all of the comment blocks and lines from the c and header files with the "//", "//+", and "//-" delimiters removed.

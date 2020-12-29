@@ -1,0 +1,19 @@
+The program begins by reading an array of characters from the console and changing the newline termination character to the null character. The program then passes the array of characters along with an empty array, args[], and a predefined maximum number of arguments for args to splitCommandLine(). 
+
+The splitCommandLine() function splits the command into words using the strchr() and skipChar() helper functions. It checks that its parameters are valid, then uses skipChar() to skip spaces and get a pointer to the first letter of the next word. The skipChar() function accepts a pointer to an array of characters and a character to be skipped, which in this case is a space. If the pointer is currently pointing to a space, it iterates over the array until it reaches a character that is not a space. skipChar() returns a pointer that is then stored in args[]. 
+
+Once the input array has been split into individual words, the main function prints the number of words and the words themselves to the console for debugging purposes. If the number of words is greater than zero, it passes args[] and the number of words to the doCommand() function. 
+
+An array of command line functions, cmdArray[], was created to hold elements of type cmdStruct. cmdStruct is a struct that represents a command line function. It has two properties, one for the name and one for the function associated with that command. cmdArray[] contains four commands as well as a null element. 
+
+The first command function is the exit function. This function is used to exit the console and does not accept any arguments. It must be the first word of the command but may be followed by other words. 
+
+The second command function is the “pwd” function. This also does not accept any arguments. It uses the getcwd() function to get the current working directory and prints this to the console.
+
+The third command function is the “cd” function. This function uses the getpwuid() function. If no arguments are provided, it changes the current directory to the home directory. If a valid directory is provided, it makes that the current working directory. If an invalid directory or too many arguments are provided, it prints an error statement to the console.
+
+Finally, the “ls” function lists the files in the current working directory. If no arguments are provided, it prints all visible files. If the “-a” argument is provided, it also prints all hidden files. If an invalid argument or too many arguments are provided, it prints an error statement. 
+
+The doCommand() function iterates through cmdArray[], and with each iteration checks if the first word from the console is equal to the name of the current element of cmdArray[]. If so, it calls the appropriate function. If the null element is reached, doCommand() informs the user that no command was found.
+
+A special feature of the C language that is used in this lab is a function pointer. In our program, the pointer is called cmdFunction and can point to any function with two parameters, a char* and int parameter, and has a void return type. As such, this pointer can point to any of the four command line functions listed above because they all share this same signature. 

@@ -1,0 +1,12 @@
+Test Documentation
+	
+	Sydney Caulfeild/20102648
+	Emma Paczkowski/20095427
+
+	File names: lab2out.txt, psout.txt
+
+    lab2out.txt contains the output of the lab2.c program. This program reports the process id (PID), user id (UID), total amount of virtual memory (VSZ) and amount of virtual memory that is in RAM (RSS) for processes on the current system using the /proc file. The program has access to the /proc file because it is loaded into a module and loaded into the kernel.
+
+    psout.txt also contains printed process information, but this time using the ps (process status) command. More specifically, the "ps -eo pid,uid,vsz,rss > psout.txt" command was used to use file redirection to print the output to psout.txt. 
+
+    These files are identical except for the last line.  This indicates that the lab2.c program is working because it is printing the same information, with the exception of the last line, as the ps command which also uses the /proc filesystem. The last process has a different pid, vsz, and rss. The last row is different because the ps command and the cat command are the last commands to be executed before accessing the processes information. These are two different commands, hence the process ids will be different. Moreover, because they are different processes, they will require different amounts of virtual memory and physical RAM memory.

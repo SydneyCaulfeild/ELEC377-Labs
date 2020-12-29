@@ -1,0 +1,38 @@
+Sydney Caulfeild / 20102648
+Emma Paczkowski / 20095427
+
+File name: producer.c
+
+Objective: Read elements from the console or a text file and write them to the shared buffer.
+
+Code description: 
+The main function starts by initializing and mapping the memory. It then uses the mutex to increase the number of producers by one. It then loops until it reaches the end of the file. Within the loop there is a nested loop in which it first uses the mutex to ensure it can access the shared data.  If it can it checks for room in the buffer and if so it stores the input character in the buffer at the in index. It then updates the count and in index variables. Once the producer is finished it uses the mutex to ensure it has access and then reduces the number of producers by one. 
+
+
+---------------------------------------------------------------------------------------------------------------
+File name: consumer.c
+
+Objective: Read the elements from the shared buffer.
+
+Code description: 
+This program also only has one function, the main function. It starts by initializing and mapping the shared memory and uses the mutex to access the number of producers. It then continues to loop while charRead is true and the number of producers is not zero. This will cause the consumer to read all the lines. Within this loop, it loops while charRead is false and the number of producers is not zero. This will ensure that the consumer will read the entire line. Now we use the mutex to read a character from the buffer. If the number of elements in the buffer (count) is greater than zero then we set c (an integer variable) to be the element at the out index in the buffer. We then update the count and the out index in the buffer. Then we use putchar to despay the character.
+
+
+---------------------------------------------------------------------------------------------------------------
+File name: common.h
+
+Objective: Declare the stuct containing shared data.
+
+Code description: This file declares a struct to contain all the shared information. The struct has six variables: one for the number of elements currently in the buffer (count), one to point to each of the in and out indeces in the buffer (inPtr and outPtr), the number of producers (numProducers), the buffer itself with room for 5 elements (buffer), and the lock variable to be used by the mutex. It also has the function definitions for getmMutex and releaseMutex.
+
+---------------------------------------------------------------------------------------------------------------
+File name: common.c
+
+Objective: Implement the mutex with a getMutex, releaseMutex, and test and set function.
+
+Code description: 
+test_and_set(): exchanges and test the lock variable that will be used to ensure only one producer/consumer accesses shared variables at a time. 
+
+getMutext(): makes the consumer/producer wait until it has access to the shared variables. 
+
+releaseMutex(): frees up the mutex once the consumer/producer is finished with the shared variables.

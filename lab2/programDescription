@@ -1,0 +1,29 @@
+Code Documentation
+	
+	Sydney Caulfeild/20102648
+	Emma Paczkowski/20095427
+
+	File name: lab2.c
+
+	Problem: Write a C program that uses the /proc file system to get the PID, user ID, total amount of virtual memory and amount of virtual memory that is in RAM of the current state for the processes on the system.
+
+
+	Code description:	
+int my_read_proc(char * page, char **start, off_t fpos, int blen, int * eof, void * data):
+This function is used to read the desired details from the user process, process ID (pid), user ID (uid), total amount of virtual memory (vsz) and amount of virtual memory that is in RAM (rss) of the current state for the processes on the system. It begins by checking if you are at the beginning of the file.  If this is the case then the function will print the headers and then loop through the tasks until it reaches a task with a process ID that is not equal to zero. Once it has found the first task, it prints the pid and uid. It then checks if the process is using virtual memory using the tasks mm property. If the process is using virtual memory, the program uses bit shifting to convert the page size to be in terms of K and uses the mm property to access the vsz and rss values. Otherwise, it prints zeros for these two values. It then advances to the next task using a do while loop.
+
+If you are not at the beginning of the file, you first check to see if you have looped back to the first task. If so, then set the end of file pointer (eof) to zero, the start pointer to page, and return zero. If you are not at the first task, then you write the task info and advance to the next task as described above. 
+
+This function ends by setting the end of file pointer (eof) to one, the start pointer to page, and returns the number of characters added to the buffer. 
+
+int init_module():
+This function is called when a module is loaded into the kernel. It checks that the process entry called lab2 was created correctly. If unsuccessful, it returns -1, otherwise, it sets the read_proc property of the proc_entry pointer to the my_read_proc function (described above) and returns zero.
+
+void cleanup_module():
+This function is called by the kernel when the module is removed.  It does this by passing the same lab2 process that was initialized in init_module to the remove_proc_entry function.
+
+	Special Tricks:
+We used the pre-defined linux task_struct data structure, notably the mm, next_task, pid and uid struct memebers.(https://tldp.org/LDP/tlk/ds/ds.html?fbclid=IwAR1O8O1mVgRTXgs8dtWTiJXk6UDIvGeYvpc_vpoG4s8VfRIP4vW-JfaRcJ8)
+
+
+

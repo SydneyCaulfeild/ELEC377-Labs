@@ -1,0 +1,20 @@
+Code description
+
+Sydney Caulfeild / 20102648
+Emma Paczkowski / 20095427
+
+File name: printDoc.sh
+
+Ojective: Extracts all comments and removes the comments delimiters from all c and header files in the given directory.
+
+Code description: This file recursively searches through all files in the current working directory and checks if the file name ends in .c or .h. If it does then it goes through the file using the stream editor command.  It extracts all the comment lines and then removes the comments delimiters.
+
+File name: progStats.sh
+
+Objective: Find and print the number of printf and fprintf statements in files with a main function as well as the number of printk statements in files with init_module.
+
+Code description: It first checks that the number of arguments is not 1. If this is the case, the script prints an error. If not, it checks that the argument is a directory name. It initializes two variables, mainFound and moduleFound, to zero. It then uses the find command to search for files in the current directory that end in .c. For each of these files it searches for a main function.  If the main function is found it sets mainFound to 1 and uses the grep command to count all occurrences of printf and fprintf. It then uses awk to format the output. Outside of the loop if mainFound is zero it prints that there were no main files. 
+
+It then does the same loop but this time searches for init_module in c files.  If it is found, it sets moduleFound to 1 and once again uses grep to count all occurrences of printk and awk to format the output. 
+
+Lastly, if the argument did not match any directory names, it prints an error.
